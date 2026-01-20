@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- ✅ PERFORMANCE: Critical viewport and rendering -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- ✅ SEO: Enhanced metadata -->
+    <title>SOC Central - Enterprise Security Operations Dashboard</title>
+    <meta name="description" content="Enterprise-grade security operations dashboard for real-time threat monitoring, incident response, and compliance management. Features SIEM, EDR, GSuite, and network security analytics." />
+    <meta name="author" content="Security Operations Team" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    <!-- ✅ SECURITY: Content Security Policy (development-friendly) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https: http://localhost:* http://127.0.0.1:* ws://localhost:* ws://127.0.0.1:*;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- ✅ PERFORMANCE: Resource hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ✅ PERFORMANCE: Preload critical assets -->
+    <link rel="preload" as="script" href="/src/main.tsx">
+    <link rel="modulepreload" href="/src/main.tsx">
+    
+    <!-- ✅ OPTIMIZED: Favicon with efficient loading -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- ✅ MOBILE: Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    
+    <!-- ✅ PWA: Mobile optimizations -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SOC Central">
+    <meta name="application-name" content="SOC Central">
+    <meta name="msapplication-TileColor" content="#1f2937">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- ✅ SOCIAL: Enhanced Open Graph -->
+    <meta property="og:title" content="SOC Central - Enterprise Security Operations Dashboard" />
+    <meta property="og:description" content="Enterprise-grade security operations dashboard for real-time threat monitoring and compliance management." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SOC Central" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- ✅ TWITTER: Card metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SOC Central - Security Dashboard" />
+    <meta name="twitter:description" content="Enterprise security operations dashboard" />
+    
+    <!-- ✅ THEME: Enhanced theming support -->
+    <meta name="theme-color" content="#1f2937" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="color-scheme" content="dark light">
+    
+    <!-- ✅ PERFORMANCE: Critical CSS inlining placeholder -->
+    <style>
+      /* Critical path CSS - Loading state */
+      #root { 
+        min-height: 100vh; 
+        background: #1f2937;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #374151;
+        border-top: 4px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      /* Prevent flash of unstyled content */
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+    </style>
+
+  </head>
+
+  <body>
+    <!-- ✅ PERFORMANCE: Loading state with spinner -->
+    <div id="root">
+      <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- ✅ PERFORMANCE: Critical theme loading (blocking) -->
+    <script>
+      (function () {
+        try {
+          // Fast theme detection and application
+          const saved = localStorage.getItem("theme") || 
+                       localStorage.getItem("security-dashboard-theme") || 
+                       "dark";
+          const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const theme = saved === "system" ? (systemPrefersDark ? "dark" : "light") : saved;
+          
+          document.documentElement.classList.remove("light", "dark");
+          document.documentElement.classList.add(theme);
+          
+          // Performance mark for theme loading
+          if (window.performance) {
+            window.performance.mark('theme-loaded');
+          }
+        } catch (e) {
+          // Fallback to dark theme
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+    
+    <!-- ✅ PERFORMANCE: Optimized module loading -->
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker disabled for production deployment -->
+    <script>
+      // Service worker disabled to prevent loading issues on Render
+      console.log('🚀 SOC Central - Service Worker disabled for faster loading');
+      
+      // Unregister existing service workers if any
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister();
+            console.log('🗑️ Unregistered existing service worker');
+          }
+        });
+      }
+    </script>
+    
+    <!-- ✅ MONITORING: Error tracking and performance monitoring -->
+    <script>
+      window.addEventListener('error', function(event) {
+        // Log client-side errors for monitoring
+        console.error('Application Error:', {
+          message: event.message,
+          filename: event.filename,
+          lineno: event.lineno,
+          colno: event.colno,
+          timestamp: new Date().toISOString()
+        });
+      });
+      
+      window.addEventListener('unhandledrejection', function(event) {
+        console.error('Unhandled Promise Rejection:', {
+          reason: event.reason,
+          timestamp: new Date().toISOString()
+        });
+      });
+      
+      // Performance monitoring disabled for production
+      window.addEventListener('load', function() {
+        console.log('🚀 SOC Central loaded successfully');
+      });
+    </script>
+    
+    <!-- ✅ ACCESSIBILITY: Skip to main content -->
+    <noscript>
+      <div style="
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        bottom: 0; 
+        background: #1f2937; 
+        color: white; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        font-family: system-ui, sans-serif;
+        z-index: 9999;
+      ">
+        <div style="text-align: center; max-width: 400px; padding: 20px;">
+          <h1>JavaScript Required</h1>
+          <p>SOC Central requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+        </div>
+      </div>
+    </noscript>
+  </body>
+</html>
