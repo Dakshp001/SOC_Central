@@ -1,0 +1,11 @@
+// Barrel exports for SOCProcesses components
+export { ProcessCard } from './ProcessCard';
+export { FlowStep } from './FlowStep';
+export { CommunicationMatrix } from './CommunicationMatrix';
+export { SIEMProcesses } from './SIEMProcesses';
+export { MDMProcesses } from './MDMProcesses';
+export { EDRProcesses } from './EDRProcesses';
+export { GSuiteProcesses } from './GSuiteProcesses';
+export { MerakiProcesses } from './MerakiProcesses';
+export { SonicWallProcesses } from './SonicWallProcesses';
+export { SOCGuidelines } from './SOCGuidelines';
